@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     respond_to do |format|
       format.html { render :show }
-      format.json { render json: ProductSerializer(@product) }
+      format.json { render json: ProductSerializer.serialize(@product) }
     end
   end
 
